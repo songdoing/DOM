@@ -40,19 +40,20 @@
 
 <script>
     var currentMenu; 
-    var menuLinks = document.querySelectorAll('.menu-link');
+    var menu = document.querySelector('.menu');
 
-    function clickMenuHandler(){
+    function clickMenuHandler(e){
         if (currentMenu) {
             currentMenu.classList.remove('menu-active');
         }        
-        this.classList.add('menu-active');
-        currentMenu = this;
+        e.target.classList.add('menu-active');
+        currentMenu = e.target; //클릭한 애(자식)
+        //this == e.currentTarget
+        //this는 addEventListener를 호출한 객체(menu)
     }
 
-    for(var i=0; i < menuLinks.length; i++) {
-        menuLinks[i].addEventListener('click', clickMenuHandler);
-    }
+    menu.addEventListener('click', clickMenuHandler);
+
 
 </script>    
 </body>
