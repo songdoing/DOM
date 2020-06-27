@@ -42,8 +42,9 @@
     var menuLinks = document.querySelectorAll('.menu-link');
 
     function clickMenuHandler(){
-        for(var i=0; i<menuLinks.length; i++) {
-            menuLinks[i].classList.remove('menu-active');
+        var activeMenu = document.querySelector('.menu-active');
+        if (activeMenu) {
+            activeMenu.classList.remove('menu-active');
         }
         this.classList.add('menu-active');
     }
