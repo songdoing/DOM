@@ -42,12 +42,20 @@
     var currentMenu; 
     var menu = document.querySelector('.menu');
 
+    function activate(elem) {
+        elem.classList.add('menu-active');
+        currentMenu = elem;
+    }
+
+    function inactivate(elem) {
+        elem.classList.remove('menu-active');
+    }
+
     function clickMenuHandler(e){
         if (currentMenu) {
-            currentMenu.classList.remove('menu-active');
+            inactivate(currentMenu);
         }        
-        e.target.classList.add('menu-active');
-        currentMenu = e.target; //클릭한 애(자식)
+        activate(e.target);//클릭한 애(자식)
         //this == e.currentTarget
         //this는 addEventListener를 호출한 객체(menu)
     }
