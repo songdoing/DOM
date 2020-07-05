@@ -1,5 +1,5 @@
 # DOM
-vanilla JavaScript
+vanilla JavaScript- addEventListener, Event delegation, Refactoring
 
 ## General Info
 * addEventListener
